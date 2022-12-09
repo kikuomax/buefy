@@ -134,12 +134,12 @@ export declare type BDialogConfig = {
     /**
      * Callback function when the confirm button is clicked
      */
-    onConfirm?: (value: string, dialog: BComponent) => any;
+    confirmCallback?: (value: string, dialog: BComponent) => any;
 
     /**
      * Callback function when the dialog is canceled (cancel button is clicked / pressed escape / clicked outside)
      */
-    onCancel?: () => any;
+    cancelCallback?: () => any;
 
     /**
      * Type (color) of the confirm button (and the icon if <code>hasIcon</code>)

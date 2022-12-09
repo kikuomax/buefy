@@ -1,4 +1,4 @@
-import _Vue from "vue";
+import type { App } from "vue";
 
 import {
     BuefyConfig,
@@ -28,7 +28,7 @@ export declare type BuefyNamespace = {
 }
 
 declare const _default: {
-    install(Vue: typeof _Vue, config: BuefyConfig): void;
+    install(app: App, config: BuefyConfig): void;
 };
 
 export {
