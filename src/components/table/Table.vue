@@ -284,7 +284,7 @@
                                     :model-value="isRowChecked(row)"
                                     :type="checkboxType"
                                     :disabled="!isRowCheckable(row)"
-                                    @click.prevent.stop="checkRow(row, index, $event)"
+                                    @input.prevent.stop="checkRow(row, index, $event)"
                                 />
                             </td>
 
@@ -317,7 +317,7 @@
                                     :model-value="isRowChecked(row)"
                                     :type="checkboxType"
                                     :disabled="!isRowCheckable(row)"
-                                    @click.prevent.stop="checkRow(row, index, $event)"
+                                    @input.prevent.stop="checkRow(row, index, $event)"
                                 />
                             </td>
                         </tr>
