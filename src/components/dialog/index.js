@@ -34,13 +34,13 @@ function open(propsData) {
                     {
                         ...propsData,
                         onConfirm: (...args) => {
-                            if (onConfirm != null) {
-                                onConfirm(...args)
+                            if (propsData.onConfirm != null) {
+                                propsData.onConfirm(...args)
                             }
                         },
                         onCancel: (...args) => {
-                            if (onCancel != null) {
-                                onCancel(...args)
+                            if (propsData.onCancel != null) {
+                                propsData.onCancel(...args)
                             }
                             vueInstance.unmount()
                         }
