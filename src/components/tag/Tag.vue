@@ -70,12 +70,12 @@
 
 <script>
 
-import BTag from '../icon/Icon.vue';
+import BIcon from '../icon/Icon.vue';
 
 export default {
     name: 'BTag',
     components: {
-        BTag,
+        BIcon,
     },
     props: {
         attached: Boolean,
