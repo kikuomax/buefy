@@ -24,10 +24,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/buefy/buefy.git"
+    "url": "https://github.com/kikuomax/buefy"
   },
   "bugs": {
-    "url": "https://github.com/buefy/buefy/issues"
+    "url": "https://github.com/kikuomax/buefy/issues"
   },
   "vetur": {
     "tags": "dist/vetur/tags.json",
