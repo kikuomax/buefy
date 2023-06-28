@@ -22,6 +22,7 @@
 
 <script>
 export default {
+    name: 'MenuList',
     props: {
         label: String,
         icon: String,
