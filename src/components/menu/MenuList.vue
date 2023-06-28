@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'MenuList',
+    name: 'BMenuList',
     props: {
         label: String,
         icon: String,
