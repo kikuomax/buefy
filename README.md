@@ -1,3 +1,5 @@
+**This branch is no longer maintained. My work is going on in another repository [`ntohq/buefy-next`](https://github.com/ntohq/buefy-next).**
+
 <p align="center">
     <a href="https://buefy.org">
         <img src="https://raw.githubusercontent.com/buefy/buefy/master/static/img/buefy-banner.png" />
