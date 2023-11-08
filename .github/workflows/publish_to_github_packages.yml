@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@codemonger-io'
       - run: npm ci
       - run: npm -w @codemonger-io/buefy-next run build
       - run: npm -w @codemonger-io/buefy-next publish
