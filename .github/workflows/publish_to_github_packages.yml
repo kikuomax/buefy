@@ -11,13 +11,39 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+
+      - name: Get commit SHA
+        run: echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+
+      - name: Extract information from buefy-next/package.json
+        id: package_info
+        uses: jaywcjlove/github-action-package@4c0fcaf1440887bf51b501d7ccadd0a15caa7c81
+        with:
+          path: packages/buefy-next/package.json
+
+      - name: Append GITHUB_SHA to the version (package.json)
+        uses: jaywcjlove/github-action-package@4c0fcaf1440887bf51b501d7ccadd0a15caa7c81
+        with:
+          path: packages/buefy-next/package.json
+          version: "${{ steps.package_info.outputs.version }}-${{ env.GITHUB_SHA }}"
+
+      # npm ci won't work unless package-lock.json is also updated
+      - name: Append GITHUB_SHA to the version (package-lock.json)
+        uses: jaywcjlove/github-action-package@4c0fcaf1440887bf51b501d7ccadd0a15caa7c81
+        with:
+          path: packages/buefy-next/package-lock.json
+          version: "${{ steps.package_info.outputs.version }}-${{ env.GITHUB_SHA }}"
+
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@codemonger-io'
+
       - run: npm ci
+
       - run: npm -w @codemonger-io/buefy-next run build
+
       - run: npm -w @codemonger-io/buefy-next publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.CODEMONGER_IO_GPR_TOKEN }}
