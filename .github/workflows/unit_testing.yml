@@ -7,10 +7,14 @@ on:
     branches:
       - dev
       - main
+      # TODO: remove this later
+      - trigger-tests
   pull_request:
     branches:
       - dev
       - main
+      # TODO: remove this later
+      - trigger-tests
 jobs:
   build:
     runs-on: ubuntu-latest
