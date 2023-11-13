@@ -20,7 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        # omits 14.x because some of our devDependencies require 16.x or higher
+        node-version: [16.x, 18.x, 20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v4
@@ -29,10 +30,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    # Node.js v14 bundles npm v6 which does not support workspaces,
-    # so we need npm v7 or higher that works with Node.js v14.
-    # we are sure that npm v7 works (npm v10 did not btw.)
-    - run: npm install -g npm@7
-      if: ${{ matrix.node-version == '14.x' }}
     - run: npm ci
     - run: npm -w @ntohq/buefy-next test
