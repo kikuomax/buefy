@@ -29,5 +29,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    # installs the latest npm to make sure that workspaces are supported;
+    # Node.js v14 bundles npm v6 which does not support workspaces
+    - run: npm install -g npm@latest
     - run: npm ci
     - run: npm -w @ntohq/buefy-next test
