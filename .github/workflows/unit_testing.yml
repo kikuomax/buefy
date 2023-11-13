@@ -33,6 +33,6 @@ jobs:
     # so we need npm v7 or higher that works with Node.js v14.
     # we are sure that npm v7 works (npm v10 did not btw.)
     - run: npm install -g npm@7
-      if: ${{ matrix.node-version == "14.x" }}
+      if: ${{ matrix.node-version == '14.x' }}
     - run: npm ci
     - run: npm -w @ntohq/buefy-next test
