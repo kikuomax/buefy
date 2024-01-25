@@ -10,12 +10,8 @@ function url() {
 }
 
 // action where you suspect the memory leak might be happening
-//
-// `selector` is an optional selector to wait for being visible.
-// ".title" by default.
 async function baseAction(page, subpage, selector) {
     const targetHref = `/documentation/${subpage}`
-    selector = selector || '.title'
     await page.waitForSelector('.sidebar-menu a', {
         visible: true
     })
@@ -37,6 +33,10 @@ async function back(page) {
     const home = await page.$('a[href="/documentation"]')
     home.evaluate((h) => {
         h.click()
+    })
+    // makes sure that the documentation component is rendered
+    await page.waitForSelector('article.content', {
+        visible: true
     })
 }
 
