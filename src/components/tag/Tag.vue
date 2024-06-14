@@ -69,8 +69,14 @@
 </template>
 
 <script>
+
+import BIcon from '../icon/Icon.vue';
+
 export default {
     name: 'BTag',
+    components: {
+        BIcon,
+    },
     props: {
         attached: Boolean,
         closable: Boolean,
