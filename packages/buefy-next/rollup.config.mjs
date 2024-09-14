@@ -41,7 +41,6 @@ const JS_COMPONENTS = [
     'numberinput',
     'select',
     'table',
-    'tabs',
     'timepicker',
     'upload',
 ]
