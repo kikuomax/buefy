@@ -42,7 +42,6 @@ const JS_COMPONENTS = [
     'input',
     'menu',
     'message',
-    'navbar',
     'notification',
     'numberinput',
     'pagination',
