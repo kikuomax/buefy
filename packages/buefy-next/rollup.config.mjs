@@ -39,7 +39,6 @@ const JS_COMPONENTS = [
     'input',
     'notification',
     'numberinput',
-    'rate',
     'select',
     'slider',
     'steps',
