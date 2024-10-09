@@ -40,7 +40,6 @@ const JS_COMPONENTS = [
     'notification',
     'numberinput',
     'select',
-    'slider',
     'steps',
     'table',
     'tabs',
